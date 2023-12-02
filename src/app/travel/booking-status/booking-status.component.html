@@ -1,0 +1,31 @@
+<p>approve-status works!</p>
+
+<p>approve-status works!</p>
+ 
+<p>edittravelrequest works!</p> 
+<h2>Approve Travel Request</h2>
+<div class="container">
+    <div class="row">
+        <div class="form-bg">
+            <form #bookingStatus="ngForm" (ngSubmit)="bookingStatusSubmit()">
+                <div class="panel panel primary">
+                    <div class="panel-heading"><hr/>
+                        <h3 class="panel-title">booking Travel request</h3>
+                    </div>
+                    <div class="panel-body">
+                        
+                        <div class="form-group">
+                            <label for="bookingStatus">booking Status</label>
+                            <input id="bookingStatus" class="form-control" name="bookingStatus" [(ngModel)]="newtravel.bookingStatus" required #bookingStatus="ngModel">
+                        </div>
+                       
+                        <br/>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary" [disabled]="bookingStatus.invalid" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form> <hr/><br/>
+        </div>
+    </div>
+</div>

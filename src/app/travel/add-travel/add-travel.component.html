@@ -1,0 +1,59 @@
+<p>add-travelRequestworks!</p> 
+<h2>Add TravelRequest</h2>
+<div class="container">
+    <div class="row">
+        <div class="form-bg">
+            <form #addtravelForm="ngForm" (ngSubmit)="addtravel(addtravelForm)">
+                <div class="panel panel primary">
+                    <div class="panel-heading"><hr/>
+                        <h3 class="panel-title">Add TravelRequest</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="employeeId">EmployeeId</label>
+                            <input id="employeeId" class="form-control" name="employeeId" [(ngModel)]="newtravel.employeeId" required #employeeId="ngModel" >
+                        </div>
+                        <div class="form-group">
+                            <label for="fromLocation">FromLocation </label>
+                            <input id="fromLocation" class="form-control" #fromLocation="ngModel" name="fromLocation" [(ngModel)]="newtravel.fromLocation" required maxlength="10" minlength="2">
+                            <div *ngIf="fromLocation.invalid && (fromLocation.dirty || fromLocation.touched)" class="alert alert-danger">
+                                Invalid fromLocation
+                                <div *ngIf="fromLocation.errors?.['required']">fromLocation is required.</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="toLocation">ToLocation</label>
+                            <input id="toLocation" class="form-control" name="toLocation" [(ngModel)]="newtravel.toLocation" required #tolocation="ngModel" >
+                        </div><br/>
+                        <div class="form-group">
+                            <label for="requestDate">RequestDate</label>
+                            <input id="requestDate" class="form-control" name="requestDate"
+                                [(ngModel)]="newtravel.requestDate" type="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="approveStatus">approveStatus</label>
+                            <input id="approveStatus" class="form-control" name="approveStatus" [(ngModel)]="newtravel.approveStatus" required #approvestatus="ngModel">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingStatus">bookingStatus</label>
+                            <input id="bookingStatus" class="form-control" name="bookingStatus" [(ngModel)]="newtravel.bookingStatus" required #bookingstatus="ngModel">
+                        </div>
+                        <div class="form-group">
+                            <label for="currentStatus">currentStatus</label>
+                            <input id="currentStatus" class="form-control" name="currentStatus" [(ngModel)]="newtravel.currentStatus" required #currentstatus="ngModel">
+                        </div>      
+                       
+                        <div class="panel-footer">
+                            <button class="btn btn-primary" [disabled]="addtravelForm.invalid" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form> <hr/><br/>
+        </div>
+    </div>
+</div>
+ 
+
+ 
+ 
+ 

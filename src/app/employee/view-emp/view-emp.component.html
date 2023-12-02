@@ -1,0 +1,67 @@
+<p>view-employee works!</p>
+<p>Employee List</p>
+ 
+<!-- <table class="table table-striped">
+  <tr>
+    <td>Employee Id</td>
+    <td>EmployeeName</td>
+    <td>Contact</td>
+    <td>Dept</td>
+    <td>Address</td>
+    <td>Dob</td>
+   
+  </tr>
+ 
+  <tr *ngFor="let emp of employeeList; trackBy: trackByEmployeeId">
+    <td>{{ emp.employeeId}}</td>
+    <td>{{ emp.employeeName }}</td>
+    <td>{{ emp.contact }}</td>
+    <td>{{ emp.dept }}</td>
+    <td>{{ emp.address }}</td>
+    <td>{{ emp.dob }}</td>
+     <td>
+      <a [routerLink]="['/employee/detail/', employee.id]">Details</a>
+      <a [routerLink]="['/employee/edit/', employee.id]">Edit</a>
+      <a [routerLink]="['/employee/delete/', employee.id]">Delete</a>
+    </td> -->
+  <!-- </tr>
+ 
+  <tr *ngIf="!employeeList || employeeList.length==0">
+    <td colspan="3">No Employee to display</td>
+</tr>
+</table>  -->
+<table class="table table-striped">
+    <tr>
+            <td>Employee Id</td>
+
+            <td>EmployeeName</td>
+
+            <td>Contact</td>
+
+             <td>Dept</td>
+
+             <td>Address</td>
+
+             <td>Dob</td>
+       
+      </tr>
+     <tr *ngFor="let g of Lstemployee;trackBy: trackByemployeeId">
+        <!-- //<tr *ngFor="let emp of employeeList; trackBy: trackByEmployeeId">  -->
+        <td>{{g.employeeId}}</td>
+    <td>{{ g.employeeName }}</td>
+    <td>{{ g.contact }}</td>
+    <td>{{ g.dept }}</td>
+    <td>{{ g.address }}</td>
+    <td>{{ g.dob }}</td>
+    <td><a [routerLink] ="['/detailemployee/',g.employeeId]">Details</a></td> 
+    <td><a [routerLink] ="['/edit/',g.employeeId]">Edit</a></td> 
+    <td><a [routerLink] ="['/delete/',g.employeeId]">delete</a></td> 
+    
+          
+    </tr>
+     
+  
+  <tr *ngIf="!Lstemployee || Lstemployee.length === 0">
+        <td colspan="3">No employee to display</td>
+    </tr>
+</table>

@@ -1,0 +1,38 @@
+<p>view-travel works!</p>
+<p>TravelRequest List</p>
+ 
+
+  
+<table class="table table-striped">
+    <tr>
+            <td>RequestId</td>
+            <td>EmployeeId</td>
+            <td>FromLocation</td>
+            <td>ToLocation</td>
+            <td>RequestDate</td>
+            <td>ApproveStatus</td>
+            <td>BookingStatus</td>
+            <td>CurrentStatus</td>
+       
+      </tr>
+     <tr *ngFor="let g of Lsttravel;trackBy: trackByRequestId">
+        
+    <td>{{g.requestId}}</td>
+    <td>{{ g.employeeId }}</td>
+    <td>{{ g.fromLocation}}</td>
+    <td>{{ g.toLocation }}</td>
+    <td>{{ g.requestDate }}</td>
+    <td>{{ g.approveStatus }}</td>
+    <td>{{ g.bookingStatus }}</td>
+    <td>{{ g.currentStatus }}</td>
+  
+    <td><a [routerLink] ="['/edittravel/',g.requestId]">Edit</a></td> 
+    <td><a [routerLink] ="['/detailtravel/',g.requestId]">Details</a></td>  
+     <td><a [routerLink] ="['/deletetravel/',g.requestId]">delete</a></td>
+     <td><a [routerLink] ="['/approveStatus/',g.requestId]">approveStatus</a></td>          
+     <td><a [routerLink] ="['/bookingStatus/',g.requestId]">bookingStatus</a></td>  
+    </tr>
+  <tr *ngIf="!Lsttravel || Lsttravel.length === 0">
+        <td colspan="3">No TravelRequest to display</td>
+    </tr>
+</table>
